@@ -149,6 +149,6 @@ generate();
 return this->table[index][suffix];
 }
 void textgen::generate(int steps) {
-for (int i = 0; i < steps; i++)
+for (int i = 0; i < steps - this->prefixlength + 1; i++)
 generate();
 }
