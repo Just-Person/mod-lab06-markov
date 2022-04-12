@@ -148,3 +148,7 @@ for (int i = 0; i < steps; i++)
 generate();
 return this->table[index][suffix];
 }
+void textgen::generate(int steps) {
+for (int i = 0; i < steps; i++)
+generate();
+}
