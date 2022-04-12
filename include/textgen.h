@@ -11,8 +11,8 @@ class textgen {
 int index;
 int prefixlength;
 int resultlength;
-std::string path;
-std::string result;
+std::string path = std::string();
+std::string result = std::string();
 
  public:
 std::vector < std::vector < std::string>> table;
