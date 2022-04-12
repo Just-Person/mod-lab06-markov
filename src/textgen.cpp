@@ -6,18 +6,19 @@
 #include "textgen.h"
 
 std::string textgen::getall() {
-std::string str = std::string();
+std::vector<std::string> str = std::vector<std::string>();
+str.push_back("");
 for (int i = 0; i < this->table.size(); i++) {
 for (int j = 0; j < this->prefixlength; j++) {
-str = str + this->table[i][j] + " ";
+str[0] = str[0] + this->table[i][j] + " ";
 }
-str = str + "- ";
+str[0] = str[0] + "- ";
 for (int j = prefixlength; j < this->table[i].size(); j++) {
-str = str + this->table[i][j] + " ";
+str[0] = str[0] + this->table[i][j] + " ";
 }
-str = str + "; ";
+str[0] = str[0] + "; ";
 }
-return str;
+return str[0];
 }
 void textgen::setprefixlength(int length) {
 this->prefixlength = length;
@@ -63,24 +64,27 @@ break;
 this->index = i;
 }
 std::string textgen::getprefix() {
-std::string prefix = std::string();
+std::vector<std::string> prefix = std::vector<std::string>();
+prefix.push_back("");
 for (int i = 0; i < this->table.size(); i++) {
 for (int j = 0; j < this->prefixlength; j++) {
-prefix = prefix + table[i][j] + " ";
+prefix[0] = prefix[0] + table[i][j] + " ";
 }
-prefix = prefix + "; ";
+prefix[0] = prefix[0] + "; ";
 }
-return prefix;
+return prefix[0];
 }
 std::string textgen::getsuffix() {
-std::string suffix = std::string();
-for (int i = 0; i < this->table.size(); i++) {
+std::vector<std::string> suffix = std::vector<std::string>();
+suffix.push_back("");
+for (int i = 0; i < this->table.size(); i++)
+{
 for (int j = this->prefixlength; j < this->table[i].size(); j++) {
-suffix = suffix + table[i][j] + " ";
+suffix[0] = suffix[0] + table[i][j] + " ";
 }
-suffix = suffix + "; ";
+suffix[0] = suffix[0] + "; ";
 }
-return suffix;
+return suffix[0];
 }
 void textgen::checkprefix(std::vector<std::string> prefixsuffix) {
 int k = 0;
@@ -102,7 +106,7 @@ if (!intable) this->table.insert(this->table.end(), prefixsuffix);
 }
 void textgen::readfile() {
 std::ifstream fin;
-fin.open(this->path);
+fin.open(this->path[0]);
 std::vector<std::string> buffer = std::vector<std::string>();
 std::string str = std::string();
 if (!fin.is_open()) {
@@ -133,7 +137,7 @@ checkprefix(bufferfor);
 }
 }
 std::string textgen::getresult() {
-return this->result;
+return this->result[0];
 }
 int textgen::getresultlength() {
 return resultlength;
