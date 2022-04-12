@@ -3,7 +3,6 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "thread"
 #include "textgen.h"
 
 std::string textgen::getall() {
@@ -32,8 +31,9 @@ for (int i = 0; i < this->prefixlength; i++)
 result = result + this->table[0][i] + " ";
 index = 0;
 this->resultlength += this->prefixlength;
-} else
+} else {
 randomizeindex();
+}
 }
 void textgen::randomizeindex() {
 int suffix = rand() % (this->table[this->index].size()
@@ -44,7 +44,7 @@ std::vector<std::string> buffer = std::vector<std::string>();
 for (int i = 1; i < this->prefixlength; i++) {
 buffer.insert(buffer.end(), this->table[this->index][i]);
 }
-buffer.insert(buffer.end(),this->table[this->index][suffix]);
+buffer.insert(buffer.end(), this->table[this->index][suffix]);
 getnewindex(buffer);
 }
 void textgen::getnewindex(std::vector<std::string> buffer) {
