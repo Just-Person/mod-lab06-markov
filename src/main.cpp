@@ -1,3 +1,4 @@
+// Copyright 2022 UNN-IASR
 #include <iostream>
 #include "textgen.h"
 #include <locale>
@@ -15,5 +16,4 @@ int main()
         text.generate();
     }
     std::cout << text.getresultlength();
-
 }
