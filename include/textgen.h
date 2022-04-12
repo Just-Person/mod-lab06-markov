@@ -2,6 +2,7 @@
 #pragma once
 #include <stdio.h>
 #include <iostream>
+#include <string>
 #include <vector>
 #include <map>
 
@@ -12,6 +13,7 @@ int prefixlength;
 int resultlength;
 std::string path;
 std::string result;
+
  public:
 std::vector < std::vector < std::string>> table;
 textgen(std::string path) {
