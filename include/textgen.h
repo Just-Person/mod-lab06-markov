@@ -11,16 +11,16 @@ class textgen {
 int index;
 int prefixlength;
 int resultlength;
-std::string path = std::string();
-std::string result = std::string();
+std::vector<std::string> path;
+std::vector<std::string> result;
 
  public:
 std::vector < std::vector < std::string>> table;
 textgen(std::string path) {
-this->path = path;
+this->path.push_back(path);
 index = -1;
 prefixlength = 1;
-result = "";
+this->result.push_back("");
 table = std::vector<std::vector <std::string>>();
 }
 void setprefixlength(int);
