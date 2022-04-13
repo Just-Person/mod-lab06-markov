@@ -53,7 +53,7 @@ int k = 0;
 for (i = 0; i < this->table.size(); i++) {
 k = 0;
 for (int j = 0; j < this->prefixlength; j++) {
-if (this->table[i][j]._Equal(buffer[j])) {
+if (isEqual(this->table[i][j],buffer[j])) {
 k++;
 }
 }
@@ -89,7 +89,7 @@ bool intable = false;
 for (int i = 0; i < this->table.size(); i++) {
 k = 0;
 for (int j = 0; j < this->prefixlength; j++) {
-if (this->table[i][j]._Equal(prefixsuffix[j])) {
+if (isEqual(this->table[i][j], prefixsuffix[j])) {
 k++;
 }
 }
