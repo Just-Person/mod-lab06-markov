@@ -63,7 +63,7 @@ break;
 this->index = i;
 }
 std::string textgen::getprefix() {
-std::string prefix = "";
+    std::string prefix = "";
 for (int i = 0; i < this->table.size(); i++) {
 for (int j = 0; j < this->prefixlength; j++) {
 prefix = prefix + table[i][j] + " ";
@@ -73,9 +73,8 @@ prefix = prefix + "; ";
 return prefix;
 }
 std::string textgen::getsuffix() {
-std::string suffix = "";
-for (int i = 0; i < this->table.size(); i++)
-{
+    std::string suffix = "";
+for (int i = 0; i < this->table.size(); i++) {
 for (int j = this->prefixlength; j < this->table[i].size(); j++) {
 suffix = suffix + table[i][j] + " ";
 }
@@ -105,7 +104,7 @@ void textgen::readfile() {
 std::ifstream fin;
 fin.open(this->path);
 std::vector<std::string> buffer = std::vector<std::string>();
-std::string str = std::string();
+    std::string str = std::string();
 if (!fin.is_open()) {
 std::cout << "Ошибка открытия файла";
 } else {
