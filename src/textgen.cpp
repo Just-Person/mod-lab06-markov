@@ -6,19 +6,18 @@
 #include "textgen.h"
 
 std::string textgen::getall() {
-std::vector<std::string> str = std::vector<std::string>();
-str.push_back("");
+std::string str = "";
 for (int i = 0; i < this->table.size(); i++) {
 for (int j = 0; j < this->prefixlength; j++) {
-str[0] = str[0] + this->table[i][j] + " ";
+str = str + this->table[i][j] + " ";
 }
-str[0] = str[0] + "- ";
+str = str + "- ";
 for (int j = prefixlength; j < this->table[i].size(); j++) {
-str[0] = str[0] + this->table[i][j] + " ";
+str = str + this->table[i][j] + " ";
 }
-str[0] = str[0] + "; ";
+str = str + "; ";
 }
-return str[0];
+return str;
 }
 void textgen::setprefixlength(int length) {
 this->prefixlength = length;
@@ -64,27 +63,25 @@ break;
 this->index = i;
 }
 std::string textgen::getprefix() {
-std::vector<std::string> prefix = std::vector<std::string>();
-prefix.push_back("");
+std::string prefix = "";
 for (int i = 0; i < this->table.size(); i++) {
 for (int j = 0; j < this->prefixlength; j++) {
-prefix[0] = prefix[0] + table[i][j] + " ";
+prefix = prefix + table[i][j] + " ";
 }
-prefix[0] = prefix[0] + "; ";
+prefix = prefix + "; ";
 }
-return prefix[0];
+return prefix;
 }
 std::string textgen::getsuffix() {
-std::vector<std::string> suffix = std::vector<std::string>();
-suffix.push_back("");
+std::string suffix = "";
 for (int i = 0; i < this->table.size(); i++)
 {
 for (int j = this->prefixlength; j < this->table[i].size(); j++) {
-suffix[0] = suffix[0] + table[i][j] + " ";
+suffix = suffix + table[i][j] + " ";
 }
-suffix[0] = suffix[0] + "; ";
+suffix = suffix + "; ";
 }
-return suffix[0];
+return suffix;
 }
 void textgen::checkprefix(std::vector<std::string> prefixsuffix) {
 int k = 0;
@@ -106,7 +103,7 @@ if (!intable) this->table.insert(this->table.end(), prefixsuffix);
 }
 void textgen::readfile() {
 std::ifstream fin;
-fin.open(this->path[0]);
+fin.open(this->path);
 std::vector<std::string> buffer = std::vector<std::string>();
 std::string str = std::string();
 if (!fin.is_open()) {
@@ -137,7 +134,7 @@ checkprefix(bufferfor);
 }
 }
 std::string textgen::getresult() {
-return this->result[0];
+return this->result;
 }
 int textgen::getresultlength() {
 return resultlength;
