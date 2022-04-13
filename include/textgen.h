@@ -39,4 +39,5 @@ std::string getresult();
 std::string getsuffix(int);
 std::string getsuffix(int, int);
 void generate(int);
+bool isEqual(std::string, std::string);
 };
