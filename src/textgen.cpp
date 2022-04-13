@@ -6,7 +6,7 @@
 #include "textgen.h"
 
 std::string textgen::getall() {
-std::string str = "";
+    std::string str = "";
 for (int i = 0; i < this->table.size(); i++) {
 for (int j = 0; j < this->prefixlength; j++) {
 str = str + this->table[i][j] + " ";
