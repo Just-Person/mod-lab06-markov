@@ -4,9 +4,9 @@
 #include <fstream>
 #include <string>
 #include "textgen.h"
-
+#define rand_r rand
 std::string textgen::getall() {
-    std::string str = "";
+	std::string str = "";
 for (int i = 0; i < this->table.size(); i++) {
 for (int j = 0; j < this->prefixlength; j++) {
 str = str + this->table[i][j] + " ";
@@ -36,8 +36,7 @@ randomizeindex();
 }
 }
 void textgen::randomizeindex() {
-int suffix = rand() % (this->table[this->index].size()
-- prefixlength) + prefixlength;
+int suffix = rand_r() % (this->table[this->index].size() - prefixlength) + prefixlength;
 result += this->table[this->index][suffix] + " ";
 resultlength++;
 std::vector<std::string> buffer = std::vector<std::string>();
@@ -73,7 +72,8 @@ prefix = prefix + "; ";
 return prefix;
 }
 std::string textgen::getsuffix() {
-    std::string suffix = "";
+std::string suffix = "";
+suffix = "";
 for (int i = 0; i < this->table.size(); i++) {
 for (int j = this->prefixlength; j < this->table[i].size(); j++) {
 suffix = suffix + table[i][j] + " ";
@@ -104,7 +104,7 @@ void textgen::readfile() {
 std::ifstream fin;
 fin.open(this->path);
 std::vector<std::string> buffer = std::vector<std::string>();
-    std::string str = std::string();
+std::string str = "";
 if (!fin.is_open()) {
 std::cout << "Ошибка открытия файла";
 } else {
