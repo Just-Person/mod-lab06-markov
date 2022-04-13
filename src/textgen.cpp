@@ -63,7 +63,7 @@ break;
 this->index = i;
 }
 std::string textgen::getprefix() {
-    std::string prefix = "";
+std::string prefix = "";
 for (int i = 0; i < this->table.size(); i++) {
 for (int j = 0; j < this->prefixlength; j++) {
 prefix = prefix + table[i][j] + " ";
