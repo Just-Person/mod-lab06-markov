@@ -59,6 +59,6 @@ textgen text = textgen("Test3.txt");
 srand(time(NULL));
 text.setprefixlength(5);
 text.readfile();
-text.generate(100);
-EXPECT_EQ(100, text.getresultlength());
+text.generate(50);
+EXPECT_EQ(50, text.getresultlength());
 }
