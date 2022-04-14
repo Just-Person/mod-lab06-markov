@@ -1,7 +1,9 @@
 // Copyright 2021 GHA Test Team
 #include <gtest/gtest.h>
-#include <ctime>
+#include <Windows.h>
 #include <locale>
+#include <ctime>
+#include <iostream>
 #include "textgen.h"
 TEST(TEST1, TrueOrFalse) {
 textgen text = textgen("Test1.txt");
