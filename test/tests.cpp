@@ -25,7 +25,7 @@ EXPECT_EQ("Hi evetyone my ; evetyone my name ; "
 "this ; for this lab ; this lab Hi ; "
 "lab Hi evetyone ; ", text.getprefix());
 }
-EST(TEST3, TrueOrFalse) {
+TEST(TEST3, TrueOrFalse) {
 textgen text = textgen("Test2.txt");
 srand(time(NULL));
 text.setprefixlength(1);
