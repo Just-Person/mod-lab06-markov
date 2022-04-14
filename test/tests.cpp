@@ -53,12 +53,3 @@ text.setprefixlength(1);
 text.readfile();
 EXPECT_EQ("third", text.getsuffix(7, 3));
 }
-TEST(TEST6, TrueOrFalse) {
-setlocale(LC_ALL, "rus");
-textgen text = textgen("Test2.txt");
-srand(time(NULL));
-text.setprefixlength(5);
-text.readfile();
-text.generate(50);
-EXPECT_EQ("50", text.getresultlength());
-}
