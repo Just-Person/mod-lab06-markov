@@ -4,13 +4,12 @@
 #include <locale>
 #include "textgen.h"
 TEST(TEST1, TrueOrFalse) {
-setlocale(LC_ALL, "rus");
 textgen text = textgen("Test1.txt");
 srand(time(NULL));
 text.setprefixlength(1);
 text.readfile();
-EXPECT_EQ("Всем ; привет ; меня ; зовут ; Илья ; и ; это ; первый ; "
-"тест ; по ; этой ; лабораторной ; ", text.getprefix());
+EXPECT_EQ("Hi ; evetyone ; my ; name ; is ; Ilya ; and ; there ; "
+"the ; first ; test ; for ; this ; lab ; ", text.getprefix());
 }
 TEST(TEST2, TrueOrFalse) {
 setlocale(LC_ALL, "rus");
