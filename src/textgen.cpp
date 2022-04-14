@@ -136,8 +136,8 @@ checkprefix(bufferfor);
 std::string textgen::getresult() {
 return this->result;
 }
-int textgen::getresultlength() {
-return resultlength;
+std::string textgen::getresultlength() {
+return std::to_string(resultlength);
 }
 std::string textgen::getsuffix(int steps) {
 for (int i = 0; i < steps; i++)
