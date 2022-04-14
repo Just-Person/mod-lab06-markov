@@ -60,5 +60,5 @@ srand(time(NULL));
 text.setprefixlength(5);
 text.readfile();
 text.generate(50);
-EXPECT_EQ(50, text.getresultlength());
+EXPECT_EQ("50", text.getresultlength());
 }
