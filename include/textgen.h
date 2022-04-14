@@ -34,7 +34,7 @@ void randomizeindex();
 void getnewindex(std::vector<std::string>);
 void readfile();
 void checkprefix(std::vector<std::string>);
-int getresultlength();
+std::string getresultlength();
 std::string getresult();
 std::string getsuffix(int);
 std::string getsuffix(int, int);
